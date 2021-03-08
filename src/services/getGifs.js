@@ -1,7 +1,7 @@
 const apiKey = 'UInUb6GD9aeeP3djuksso0XBBVPUxPAs'
 
 const API = ({keyword = 'panda'} = {}) => {
-	const apiUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=20&offset=0&rating=g&lang=en`
+	const apiUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=50&offset=0&rating=g&lang=en`
 	return fetch(apiUrl)
 		.then(result => result.json())
 		.then(response => {

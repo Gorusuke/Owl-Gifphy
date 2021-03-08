@@ -15,10 +15,10 @@
 
 @keyframes spin{
   0%{
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100%{
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -26,29 +26,63 @@
   text-align: center;
 }
 
-.App-content {
+.content{
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding-top: 2rem;
   color: white;
 }
 
+.content li{
+  list-style: none;
+}
+
+.content .link{
+  color: white;
+  text-decoration: none;
+}
+
+.content .link:hover{
+  color: rgb(145, 145, 145);
+}
+
+.App-content {
+  column-count: 2;
+  column-gap: .8rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
 .gif {
-  border: 1px solid #eee;
-  border-radius: 10px;  
-  padding: 2rem;
-  margin-bottom: 2rem;
+  width:100%;
+  display: inline-block;
+  margin: .5rem;
 }
 
-.gif h4{
-  margin: 0
+.gif .img-container{
+  /* margin-top: 1rem; */
+  position: relative;
 }
 
-.gif div{
-  margin-top: 1rem;
+.gif img{
+  width: 100%;
 }
 
+.gif .small{
+  position: absolute;
+  bottom: 3%;
+  left: 0;
+  background-color: gray;
+  font-size: .8rem;
+}
+
+@media(min-width: 600px){
+  .App-content {
+    column-count: 3;
+  }
+}
+
+@media(min-width: 800px){
+  .App-content {
+    column-count: 4;
+  }
+}

@@ -4,6 +4,7 @@ import '../App.css';
 
 const Gifs = ({gif}) => {
   const {id, title, url} = gif
+  
   return (
     <div className="gif">
       <h4>{title}</h4>

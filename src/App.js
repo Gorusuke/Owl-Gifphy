@@ -1,32 +1,35 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import Gifs from './components/Gifs';
+import Loading from './components/Loading';
+import API from './services/getGifs';
 
 function App() {
 
   const [gifs, setGifs] = useState([]);
-  const apiUrl = 'https://api.giphy.com/v1/gifs/search?api_key=UInUb6GD9aeeP3djuksso0XBBVPUxPAs&q=Brawl Stars&limit=20&offset=0&rating=g&lang=en'
+  const [keyword, setKeyword] = useState('anime')
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    const API = () => {
-      fetch(apiUrl)
-        .then(result => result.json())
-        .then(response => {
-          const {data} = response;
-          const gifs = data.map(image => image.images.downsized_medium.url)
-          setGifs(gifs)
-        })
-    }
-    API();
-  }, [])
+    setLoading(true)
+    API({keyword}).then(gif => {
+      setGifs(gif)
+      setLoading(false)
+    })
+  }, [keyword])
 
   
   return (
     <div className="App">
-      <section className="App-content">
-        {
-          gifs.map(gif => <img src={gif} alt="Gifs" />)
-        }              
-      </section>
+      {loading 
+        ? <Loading/>
+        : <section className="App-content">
+            <button onClick={() => setKeyword('mapache')}>Cambiar Keyword</button>               
+            {
+              gifs.map(gif => <Gifs key={gif.id} gif={gif}/>)
+            }
+          </section>
+      }
     </div>
   );
 }

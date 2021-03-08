@@ -1,3 +1,27 @@
+/* Spinner */
+
+.spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 4px solid rgb(49, 43, 141);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-left-color: rgba(255, 0, 0, 0.6);
+  animation: spin 1s ease-in infinite;
+}
+
+@keyframes spin{
+  0%{
+      transform: rotate(0deg);
+  }
+  100%{
+      transform: rotate(360deg);
+  }
+}
+
 .App {
   text-align: center;
 }
@@ -12,3 +36,19 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.gif {
+  border: 1px solid #eee;
+  border-radius: 10px;  
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.gif h4{
+  margin: 0
+}
+
+.gif div{
+  margin-top: 1rem;
+}
+

@@ -11,8 +11,7 @@ const POPULAR_GIFS = ['colombia', 'anime', 'panda', 'brawl stars']
 const Home = () => {
 
 	const [keyword, setKeyword] = useState('')
-	const history = useHistory();
-
+	const history = useHistory()
 	const {loading, gifs} = useGifs()
 
 	const handleSubmit = (e) => {

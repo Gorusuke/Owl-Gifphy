@@ -15,4 +15,16 @@ const API = ({keyword = 'panda'} = {}) => {
 		})
   }
 
-export default API
+const gifsById = ({id}) => {
+	const apiById = `https://api.giphy.com/v1/gifs/${id}?api_key=UInUb6GD9aeeP3djuksso0XBBVPUxPAs`
+		return fetch(apiById)
+		.then((result) => result.json())
+		.then(response => {
+			const {data} = response
+			const {images, id} = data
+			const url = images.downsized_medium.url
+			return {url, id}
+		})
+}
+
+export {API, gifsById}

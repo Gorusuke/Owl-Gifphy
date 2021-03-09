@@ -1,16 +1,20 @@
 import { useEffect, useState } from 'react';
-import API from '../services/getGifs';
+import {API} from '../services/getGifs';
 
-const useGifs = ({keyword}) => {
+const useGifs = ({keyword} = {keyword: 'random'}) => {
 
 	const [gifs, setGifs] = useState([]);
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     setLoading(true)
-    API({keyword}).then(gif => {
+		// recuperamos la keyword de localStorage
+		const keywordToUSe = keyword || localStorage.getItem('lastKeyword')
+    API({keyword : keywordToUSe}).then(gif => {
       setGifs(gif)
       setLoading(false)
+			// Guardamos la keyword en el localStorage
+			localStorage.setItem('lastKeyword', keyword)
     })
   }, [keyword])
 

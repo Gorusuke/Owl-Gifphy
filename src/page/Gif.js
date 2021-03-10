@@ -29,13 +29,12 @@ const Gif = ({match}) => {
 			{loading 
 				? <Loading/>
 				: <div className="home-container">
-						<img className="gif-img" src={logo} alt="logo"/>
+						<Link to='/' >
+							<img className="gif-img" src={logo} alt="logo"/>
+						</Link> 
 						<div className="gif-container">
 							{<Gifs key={byId.id} gif={byId} change/>}
 						</div>
-						<Link to='/' >
-							<button>Volver a Inicio</button>
-						</Link> 
 					</div>
 			}
 		</>

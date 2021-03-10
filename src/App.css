@@ -35,35 +35,91 @@
   width: 300px;
 }
 
-.home-container h2{
+.home-container form{
+  width: 100%;
   text-align: center;
-  color: rgb(226, 70, 70);
-  text-transform: capitalize;
-  margin-top: 2rem;
-}
-
-.home-container ul{
-  list-style: none;
-  text-align: center;
-  padding: 0;
-}
-
-.home-container .link{
-  color: white;
-  text-decoration: none;
-  font-size: 1.25rem;
-}
-
-.home-container .link:hover{
-  color: rgb(145, 145, 145);
 }
 
 .home-container input{
   padding: 1rem;
-  border-radius: 10px;
-  font-size: .9rem;
+  border-radius: 0 10px 10px 0;
+  font-size: 1rem;
+  border: none;
+  width: 25%;
+  /* text-align: center; */
+}
+
+.home-container button{
+  padding: 1rem 2rem;
+  border-radius: 10px 0 0 10px;
+  font-size: 1rem;
+  color: white;
+  background-color: rgb(101, 101, 248);
+  border: none;
+  cursor: pointer;
+  /* outline: none; */
   /* width: 100%; */
 }
+
+.gifs-content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-title{
+  font-size: 2rem;
+  color: white;
+  align-self: start;
+  padding-left: 1rem;
+  /* margin-top: 2rem; */
+  /* width: 100%; */
+}
+
+.home-content{
+  column-count: 2;
+  column-gap: .8rem;
+  padding: 1rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.aside{
+  width: 70%;
+  padding: 2rem;
+}
+
+.aside h2{
+  text-align: start;
+  color: rgb(226, 70, 70);
+  text-transform: capitalize;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.aside ul{
+  list-style: none;
+  text-align: start;
+  padding: 0;
+}
+
+.aside ul li {
+  margin-bottom: .5rem;
+}
+
+
+.aside .link{
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.aside .link:hover{
+  color: rgb(145, 145, 145);
+}
+
+
 
 .App {
   text-align: center;
@@ -81,15 +137,9 @@
   margin: 0 auto;
 }
 
-.home-title{
-  /* display: block; */
-  font-size: 2rem;
-  color: white;  
-}
-
-.gif-container{
-  width: 85%;  
-}
+/* .gif-container{
+  width: 85%;
+} */
 
 .gif-img{
   clip-path: circle(40%);
@@ -100,7 +150,7 @@
 .gif {
   width:100%;
   display: inline-block;
-  margin: .5rem;
+  margin-bottom: .5rem;
 }
 
 .gif .img-container{
@@ -120,11 +170,22 @@
   font-size: .8rem;
 }
 
-
-
 @media(min-width: 600px){
   .App-content {
     column-count: 3;
+  }
+
+  .gifs-content{
+    flex-direction: row;
+  }
+
+  .home-content{
+    column-count: 3;
+    width: 70%;
+  }
+  
+  .aside{
+    width: 30%;
   }
 
   .gif-container{
@@ -133,11 +194,28 @@
 }
 
 @media(min-width: 800px){
-  .App-content {
-    column-count: 4;
+
+  .gifs-content{
+    flex-direction: row;
   }
 
   .gif-container{
     width: 40%;  
+  }
+}
+
+@media(min-width: 1200px){
+
+  .App-content {
+    column-count: 4;
+  }
+
+  .home-content{
+    column-count: 4;
+    width: 80%;
+  }
+
+  .aside{
+    width: 20%;
   }
 }

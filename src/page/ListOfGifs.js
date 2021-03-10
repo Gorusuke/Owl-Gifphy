@@ -3,6 +3,8 @@ import Gifs from '../components/Gifs';
 import Loading from '../components/Loading';
 import { Link } from 'react-router-dom';
 import useGifs from '../hooks/useGifs';
+import logo from '../logo.png'
+
 
 const ListOfGifs = ({match}) => {
 
@@ -15,7 +17,7 @@ const ListOfGifs = ({match}) => {
 			? <Loading/>
 			: <section className="content">
 					<Link to='/' >
-						<button>Volver a Inicio</button>
+						<img className="gif-img" src={logo} alt="logo"/>
 					</Link>              
 					<section className="App-content">
 						{gifs.map(gif => <Gifs key={gif.id} gif={gif}/>)}

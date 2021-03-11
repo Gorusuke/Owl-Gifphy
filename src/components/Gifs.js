@@ -8,7 +8,6 @@ const Gifs = ({gif, change}) => {
 
   return (
     <div className="gif">
-      {/* <h4>{title}</h4> */}
       <div className="img-container">
         <small className="small">{id}</small>
         {change 

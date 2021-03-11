@@ -4,21 +4,15 @@ import {Link, useHistory} from 'react-router-dom'
 import useGifs from '../hooks/useGifs'
 import Loading from '../components/Loading'
 import Gifs from '../components/Gifs'
-import logo from '../logo.png'
-import { gifTrending } from '../services/getGifs';
+import TrendingSearch from '../components/TrendingSearch';
 
 
 const Home = () => {
 
 	const [keyword, setKeyword] = useState('')
-	const [trending, setTrending] = useState([])
 	const history = useHistory();
-
+	
 	const {loading, gifs} = useGifs()
-
-	useEffect(() => {
-		gifTrending().then(result => setTrending(result))
-	}, [])
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -35,7 +29,7 @@ const Home = () => {
 		{loading 
 		?	<Loading/>
 		: <div className="home-container">
-				<img className="home-img" src={logo} alt="logo"/>
+				<h4 className="logo">Owl Gifphy</h4>
 				<form onSubmit={handleSubmit}>
 					<button>Buscar</button>
 					<input onChange={handleChange} placeholder="Search a gif here..!" type='text'/>
@@ -47,13 +41,7 @@ const Home = () => {
 					</section>
 					<section className="aside">
 						<h2>Tendencias.!</h2>
-						<ul>
-							{trending.map(trend => 
-								<li key={trend}>
-									<Link className="link" to={`/search/${trend}`}>{trend}</Link>                
-								</li>
-							)}
-						</ul>
+						<TrendingSearch/>
 					</section>
 				</section>
 				

@@ -1,3 +1,11 @@
+*,
+*::before,
+*::after{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 /* Spinner */
 
 .spinner{
@@ -30,9 +38,15 @@
   min-height: 100vh;
 }
 
-.home-img{
-  clip-path: circle(40%);
-  width: 300px;
+.logo{
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  margin: 2rem;
+}
+
+.link-home{
+  text-decoration: none;
 }
 
 .home-container form{
@@ -46,7 +60,6 @@
   font-size: 1rem;
   border: none;
   width: 25%;
-  /* text-align: center; */
 }
 
 .home-container button{
@@ -57,8 +70,6 @@
   background-color: rgb(101, 101, 248);
   border: none;
   cursor: pointer;
-  /* outline: none; */
-  /* width: 100%; */
 }
 
 .gifs-content{
@@ -72,8 +83,7 @@
   color: white;
   align-self: start;
   padding-left: 1rem;
-  /* margin-top: 2rem; */
-  /* width: 100%; */
+  margin: 5rem 0 2rem 0;
 }
 
 .home-content{
@@ -107,7 +117,6 @@
   margin-bottom: .5rem;
 }
 
-
 .aside .link{
   color: white;
   text-decoration: none;
@@ -119,8 +128,6 @@
   color: rgb(145, 145, 145);
 }
 
-
-
 .App {
   text-align: center;
 }
@@ -130,21 +137,24 @@
   color: white;
 }
 
-.App-content {
-  column-count: 2;
-  column-gap: .8rem;
+.app-content-container{
   width: 90%;
   margin: 0 auto;
 }
 
-/* .gif-container{
-  width: 85%;
-} */
+.busqueda{
+  text-align: start;
+  font-size: 2rem;
+  margin: 5rem 0 2rem 0;
+  text-transform: capitalize;
+  /* padding-left: 2rem; */
+}
 
-.gif-img{
-  clip-path: circle(40%);
-  width: 200px;
-  margin-bottom: 5rem;
+.App-content {
+  column-count: 2;
+  column-gap: .8rem;
+  /* min-height: 100vh; */
+  /* width: 100%; */
 }
 
 .gif {

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Gifs from '../components/Gifs'
 import Loading from '../components/Loading'
 import {gifsById} from '../services/getGifs';
-import logo from '../logo.png'
 import { Link } from 'react-router-dom';
 
 
@@ -29,8 +28,8 @@ const Gif = ({match}) => {
 			{loading 
 				? <Loading/>
 				: <div className="home-container">
-						<Link to='/' >
-							<img className="gif-img" src={logo} alt="logo"/>
+						<Link to='/' className="link-home">
+						<h4 className="logo">Owl Gifphy</h4>
 						</Link> 
 						<div className="gif-container">
 							{<Gifs key={byId.id} gif={byId} change/>}

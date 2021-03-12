@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import '../App.css';
-import {Link, useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import useGifs from '../hooks/useGifs'
 import Loading from '../components/Loading'
 import Gifs from '../components/Gifs'
-import TrendingSearch from '../components/TrendingSearch';
+import LazyTranding from '../components/TrendingSearch';
 
 
 const Home = () => {
@@ -41,7 +41,7 @@ const Home = () => {
 					</section>
 					<section className="aside">
 						<h2>Tendencias.!</h2>
-						<TrendingSearch/>
+						<LazyTranding/>
 					</section>
 				</section>
 				

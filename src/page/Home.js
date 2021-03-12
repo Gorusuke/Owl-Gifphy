@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 import '../App.css';
 import {useHistory} from 'react-router-dom'
 import useGifs from '../hooks/useGifs'
 import Loading from '../components/Loading'
 import Gifs from '../components/Gifs'
-import LazyTranding from '../components/TrendingSearch';
+import LazyTranding from '../components/LazyTranding';
 
 
 const Home = () => {
@@ -40,7 +40,6 @@ const Home = () => {
 						{gifs.map(gif => <Gifs key={gif.id} gif={gif}/>)}					
 					</section>
 					<section className="aside">
-						<h2>Tendencias.!</h2>
 						<LazyTranding/>
 					</section>
 				</section>

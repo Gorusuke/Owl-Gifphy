@@ -8,8 +8,11 @@ import useGifs from '../hooks/useGifs';
 const ListOfGifs = ({match}) => {
 
 	const {keyword} = match.params
-  const {loading, gifs} = useGifs({keyword})
-	console.info(keyword)
+  const {loading, gifs, setPage} = useGifs({keyword})
+
+	const handleNextPage = () => {
+		setPage(prevPage => prevPage + 1)
+	}
 
 	return (
 		<div className="App">
@@ -25,6 +28,7 @@ const ListOfGifs = ({match}) => {
 							{gifs.map(gif => <Gifs key={gif.id} gif={gif}/>)}
 						</section>
 					</section> 										
+					<button onClick={handleNextPage} className="button">Cargar mas Gifs</button>
 				</section>
 		}
 		</div>

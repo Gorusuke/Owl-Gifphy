@@ -42,8 +42,7 @@ const Home = () => {
 					<section className="aside">
 						<LazyTranding/>
 					</section>
-				</section>
-				
+				</section>				
 			</div>
 		}
 		</>

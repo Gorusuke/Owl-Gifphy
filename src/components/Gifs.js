@@ -9,7 +9,7 @@ const Gifs = ({gif, change}) => {
   return (
     <div className="gif">
       <div className="img-container">
-        <small className="small">{id}</small>
+        <small className="small">{title}</small>
         {change 
           ? <img src={url} alt={title} />
           : <Link to={`/gif/${id}`}>

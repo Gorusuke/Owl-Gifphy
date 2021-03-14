@@ -10,9 +10,9 @@ const useGifs = ({keyword} = {keyword: null}) => {
   const [loadingNextPage, setLoadingNextPage] = useState(false)
   const [page, setPage] = useState(INITIAL_PAGE)
   
-  const keywordToUSe = keyword || localStorage.getItem('lastKeyword') || 'random'
-
+  
   useEffect(() => {
+    const keywordToUSe = keyword || localStorage.getItem('lastKeyword') || 'random'
     setLoading(true)
 		// recuperamos la keyword de localStorage
     API({keyword : keywordToUSe})
@@ -22,9 +22,10 @@ const useGifs = ({keyword} = {keyword: null}) => {
         // Guardamos la keyword en el localStorage
         localStorage.setItem('lastKeyword', keyword)
       })
-  }, [keyword, keywordToUSe])
+  }, [keyword])
 
   useEffect(() => {
+    const keywordToUSe = keyword || localStorage.getItem('lastKeyword') || 'random'
     if(page === INITIAL_PAGE) return
     setLoadingNextPage(true)
     API({keyword: keywordToUSe, page})
@@ -34,7 +35,7 @@ const useGifs = ({keyword} = {keyword: null}) => {
       })
 
 
-  }, [page, keywordToUSe])
+  }, [page, keyword])
 
 	return {loading, gifs, loadingNextPage, setPage}
 }

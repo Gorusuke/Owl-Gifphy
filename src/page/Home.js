@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from 'react'
+import React, { useState } from 'react'
 import '../App.css';
 import {useHistory} from 'react-router-dom'
 import useGifs from '../hooks/useGifs'

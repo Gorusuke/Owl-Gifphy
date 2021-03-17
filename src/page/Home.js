@@ -5,6 +5,7 @@ import Loading from '../components/Loading'
 import Gifs from '../components/Gifs'
 import LazyTranding from '../components/LazyTranding';
 import SearchForm from '../components/SearchForm';
+import logo from '../Logo.png'
 
 
 const Home = () => {
@@ -16,7 +17,12 @@ const Home = () => {
 		{loading 
 		?	<Loading/>
 		: <div className="home-container">
-				<h4 className="logo">Owl Gifphy</h4>
+				<div className="title-logo">
+					<div className="logo-container">
+						<img src={logo} alt="Logo"/>
+					</div>
+					<h4>Owl Gifphy</h4>
+				</div>
 				<SearchForm />	
 				<h4 className="home-title">Ultima Búsqueda</h4>
 				<section className="gifs-content">

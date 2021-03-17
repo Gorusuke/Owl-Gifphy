@@ -11,7 +11,9 @@ const Gifs = ({gif, change}) => {
       <div className="img-container">
         <small className="small">{title}</small>
         {change 
-          ? <img src={url} alt={title} />
+          ? <div className="gif-img-container">
+              <img src={url} alt={title} />
+            </div>
           : <Link to={`/gif/${id}`}>
               <img src={url} alt={title} />
             </Link>

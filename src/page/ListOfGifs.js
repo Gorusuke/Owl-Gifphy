@@ -3,6 +3,7 @@ import Gifs from '../components/Gifs';
 import Loading from '../components/Loading';
 import { Link } from 'react-router-dom';
 import useGifs from '../hooks/useGifs';
+import logo from '../Logo.png'
 
 
 const ListOfGifs = ({match}) => {
@@ -20,7 +21,12 @@ const ListOfGifs = ({match}) => {
 			? <Loading/>
 			: <section className="content">
 					<Link to='/' className="link-home">
-						<h4 className="logo">Owl Gifphy</h4>
+						<div className="title-logo">
+							<div className="logo-container">
+								<img src={logo} alt="Logo"/>
+							</div>
+							<h4>Owl Gifphy</h4>
+						</div>
 					</Link> 
 					<section className="app-content-container">
 						<h5 className="busqueda">{decodeURI(keyword)}</h5>     

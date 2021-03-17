@@ -23,8 +23,8 @@ const TrendingSeaches = () => {
         : <>
             <h2>Tendencias.!</h2>
             <ul>
-              {trending.map(trend => 
-                <li key={trend}>
+              {trending.map((trend, i) => 
+                <li key={i}>
                   <Link className="link" to={`/search/${trend}`}>{trend}</Link>                
                 </li>
               )}

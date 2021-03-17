@@ -52,15 +52,15 @@
 }
 
 .home-container input{
-  padding: 1rem;
+  padding: .7rem;
   border-radius: 0 10px 10px 0;
   font-size: 1rem;
   border: none;
-  width: 25%;
+  width: 60%;
 }
 
 .home-container button{
-  padding: 1rem 2rem;
+  padding: .7rem 1rem;
   border-radius: 10px 0 0 10px;
   font-size: 1rem;
   color: white;
@@ -76,9 +76,9 @@
 }
 
 .home-title{
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: white;
-  margin: 5rem 0 2rem 0;
+  margin: 3rem 0 1rem 0;
 }
 
 .aside{
@@ -182,6 +182,20 @@
     grid-template-rows: masonry;
   }
 
+  .home-container input{
+    padding: 1rem;
+    width: 40%;
+  }
+  
+  .home-container button{
+    padding: 1rem 2rem;
+  }
+
+  .home-title{
+    font-size: 2rem;  
+    margin: 5rem 0 2rem 0;
+  }
+
   .gifs-content{
     flex-direction: row;
   }
@@ -198,6 +212,10 @@
 
 
 @media(min-width: 1200px){
+
+  .home-container input{
+    width: 30%;
+  }
 
   .aside .link{
     font-size: 1.25rem;

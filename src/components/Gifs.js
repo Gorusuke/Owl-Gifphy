@@ -8,17 +8,19 @@ const Gifs = ({gif, change}) => {
 
   return (
     <div className="gif">
-      <div className="img-container">
-        <small className="small">{title}</small>
-        {change 
-          ? <div className="gif-img-container">
-              <img src={url} alt={title} />
-            </div>
-          : <Link to={`/gif/${id}`}>
+      {change 
+        ? <div className="gif-img-container">
+            <h2 className="gif-title">{title}</h2>
+            <small className="small">{title}</small>
+            <img src={url} alt={title} />
+          </div>
+        : <div className="img-container">
+            <small className="small">{title}</small>
+            <Link to={`/gif/${id}`}>
               <img src={url} alt={title} />
             </Link>
+          </div>
         }
-      </div>
     </div>
   )
 }

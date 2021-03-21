@@ -22,9 +22,9 @@ const gifsById = ({id}) => {
 		.then((result) => result.json())
 		.then(response => {
 			const {data} = response
-				const {images, id} = data
+				const {images, id, title} = data
 				const url = images.downsized_medium.url
-				return {url, id}
+				return {url, id, title}
 		})
 }
 

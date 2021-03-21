@@ -4,12 +4,15 @@ import Loading from '../components/Loading';
 import { Link } from 'react-router-dom';
 import useGifs from '../hooks/useGifs';
 import logo from '../Logo.png'
+import useSEO from '../hooks/useSEO';
 
 
 const ListOfGifs = ({match}) => {
 
 	const {keyword} = match.params
   const {loading, gifs, setPage} = useGifs({keyword})
+
+	useSEO({title: keyword, description: `Detail of ${keyword}`})
 
 	const handleNextPage = () => {
 		setPage(prevPage => prevPage + 1)

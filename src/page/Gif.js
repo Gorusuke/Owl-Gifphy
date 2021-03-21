@@ -4,6 +4,7 @@ import Loading from '../components/Loading'
 import {gifsById} from '../services/getGifs';
 import { Link } from 'react-router-dom';
 import logo from '../Logo.png'
+import useSEO from '../hooks/useSEO';
 
 
 
@@ -13,12 +14,14 @@ const Gif = ({match}) => {
 	const [byId, setByID] = useState([])
 	const [loading, setLoading] = useState(false)
 	
-	
+	const title = byId.title
+	useSEO({title, description: `Detail of ${title}`})
+
 	useEffect(() => {
 		setLoading(true)
 		gifsById({id}).then(gifId => {			
-			const {url, id} = gifId
-			setByID({url, id})
+			const {url, id, title} = gifId
+			setByID({url, id, title})
 			setLoading(false)	
 		})
 		// eslint-disable-next-line

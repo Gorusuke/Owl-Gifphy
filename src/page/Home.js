@@ -6,11 +6,15 @@ import Gifs from '../components/Gifs'
 import LazyTranding from '../components/LazyTranding';
 import SearchForm from '../components/SearchForm';
 import logo from '../Logo.png'
+import useSEO from '../hooks/useSEO';
 
 
 const Home = () => {
 	
 	const {loading, gifs} = useGifs()
+
+	useSEO({})
+
 
 	return (
 		<>

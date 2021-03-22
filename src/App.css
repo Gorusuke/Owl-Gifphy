@@ -34,23 +34,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 .title-logo h4{
   font-size: 2rem;
   color: white;
-  margin-left: -2rem;
+  margin-left: -1rem;
 }
 
 .logo-container{
+  height: 150px;
   width: 200px;
+  background-image: url('https://imagenes-pages.s3-sa-east-1.amazonaws.com/Logo.png');
+  background-size: cover;
+  background-position: center;
 }
-
-.logo-container img{
-  max-width: 100%;
-}
-
 
 .link-home{
   text-decoration: none;

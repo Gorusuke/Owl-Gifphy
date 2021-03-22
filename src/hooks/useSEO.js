@@ -2,9 +2,9 @@
 
 export default function useSEO({title, description}) {
   if(title === undefined){
-    document.title = 'Owl Giphy'
+    document.title = 'Owl Gifphy'
   } else {
-    document.title = `${title} | Owl Giphy`
+    document.title = `${title} | Owl Gifphy`
   }
 
   const content = document.querySelector('meta[name="description"]')
